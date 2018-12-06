@@ -10,10 +10,10 @@ require('./modules/authentication-verifier');
 
 var allRouter = require('./routes/all');
 var indexRouter = require('./routes/index');
-var productRouter = require('./routes/product');
-var categoryRouter = require('./routes/category');
+// var productRouter = require('./routes/product');
+// var categoryRouter = require('./routes/category');
 var userRouter = require('./routes/user');
-var fileRouter = require('./routes/file');
+// var fileRouter = require('./routes/file');
 
 var app = express();
 
@@ -29,10 +29,10 @@ app.use(device.capture({ parseUserAgent: true }));
 app.use(sessionVerifier.restoreSessionFix);
 app.use(allRouter);
 app.use('/', indexRouter);
-app.use('/product', productRouter);
+// app.use('/product', productRouter);
 app.use('/user', userRouter);
-app.use('/category', categoryRouter);
-app.use('/file', fileRouter);
+// app.use('/category', categoryRouter);
+// app.use('/file', fileRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -36,11 +36,11 @@ module.exports = (sequelize, DataTypes) => {
             version: false
         });
 
-    User.associate = models => {
+    Typesw.associate = models => {
         //asociar los roles
 
-        Typesw.belongsTo(models.Records, {
-            foreignKey: 'records'
+        Typesw.belongsTo(models.Record, {
+            foreignKey: 'record'
         });
     };
 

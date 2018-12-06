@@ -40,8 +40,8 @@ module.exports = (sequelize, DataTypes) => {
 
     Role.associate = models => {
         //asociar los roles
-        Role.belongsToMany(models.User, {
-            through: 'user',
+        Role.hasMany(models.User, {
+            as: 'users',
             foreignKey: 'role'
         });
     };

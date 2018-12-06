@@ -3,7 +3,7 @@
 var crypto = require('crypto');
 
 module.exports = (sequelize, DataTypes) => {
-    let Records = sequelize.define('Records', {
+    let Record = sequelize.define('Record', {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -60,7 +60,7 @@ module.exports = (sequelize, DataTypes) => {
             freezeTableName: false,
 
             // define the table's name
-            tableName: 'records',
+            tableName: 'record',
 
             // Enable optimistic locking.  When enabled, sequelize will add a version count attribute
             // to the model and throw an OptimisticLockingError error when stale instances are saved.
@@ -68,18 +68,18 @@ module.exports = (sequelize, DataTypes) => {
             version: false
         });
 
-    User.associate = models => {
+    Record.associate = models => {
         //asociar los roles
 
-        Records.belongsTo(models.User, {
+        Record.belongsTo(models.User, {
             foreignKey: 'user'
         });
 
-        Records.hasMany(models.Typesw, {
-            as: 'typesw',
-            foreignKey: 'records'
+        Record.hasMany(models.Typesw, {
+            as: 'typesws',
+            foreignKey: 'record'
         });
     };
 
-    return Records;
+    return Record;
 };

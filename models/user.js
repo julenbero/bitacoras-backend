@@ -72,7 +72,7 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'role'
         });
 
-        User.hasMany(models.Records, {
+        User.hasMany(models.Record, {
             as: 'records',
             foreignKey: 'user'
         });

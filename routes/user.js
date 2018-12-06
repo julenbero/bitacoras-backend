@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var object = require('../modules/objectsAndTypes');
+// var object = require('../modules/objectsAndTypes');
 var crypto = require('crypto');
 
 router.get('/:id', (req, res, next) => {

@@ -11,7 +11,7 @@ config.database.username = "root";
 config.database.password = "CwqSoIu9pZMorHuZ";
 config.database.port = "3306";
 config.database.host = "phenixbytes.com";
-config.database.database = "rappi";
+config.database.database = "bitacorasjb";
 config.database.operatorsAliases = false;
 
 config.database.pool = {};
