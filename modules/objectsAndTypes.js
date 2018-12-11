@@ -92,7 +92,7 @@ object.__saveObject = (fields, values, objectName) => {
                 //esta funcion no llama el resolve
             })
             .catch(error => {
-                response.push({ command: 'message', type: "error", content: objectName.toLowerCase() + " arror al registrar" + error });
+                response.push({ command: 'message', type: "error", content: objectName.toLowerCase() + " error al registrar" + error });
                 reject(response);
             });
     });

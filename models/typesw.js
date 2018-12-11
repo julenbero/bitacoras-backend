@@ -1,7 +1,5 @@
 "use strict";
 
-var crypto = require('crypto');
-
 module.exports = (sequelize, DataTypes) => {
     let Typesw = sequelize.define('Typesw', {
         id: {
@@ -13,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
         typew: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
+        }
     }, {
             // don't add the timestamp attributes (updatedAt, createdAt)
-            timestamps: true,
+            timestamps: false,
 
             // don't use camelcase for automatically added attributes but underscore style
             // so updatedAt will be updated_at
@@ -38,9 +36,9 @@ module.exports = (sequelize, DataTypes) => {
 
     Typesw.associate = models => {
         //asociar los roles
-
-        Typesw.belongsTo(models.Record, {
-            foreignKey: 'record'
+        Typesw.hasMany(models.Record, {
+            as: 'records',
+            foreignKey: 'typesw'
         });
     };
 

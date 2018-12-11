@@ -35,15 +35,15 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
         exitoso: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
             allowNull: false,
         },
         standby: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
             allowNull: false,
         },
         prorroga: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
             allowNull: false,
         },
     }, {
@@ -75,9 +75,8 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'user'
         });
 
-        Record.hasMany(models.Typesw, {
-            as: 'typesws',
-            foreignKey: 'record'
+        Record.belongsTo(models.Typesw, {
+            foreignKey: 'typesw'
         });
     };
 

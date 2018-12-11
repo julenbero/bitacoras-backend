@@ -1,0 +1,644 @@
+{
+	"info": {
+		"_postman_id": "e4ef7674-3ab5-44b3-956a-9a8f74edf350",
+		"name": "Proyecto-Back",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User - Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/user/register?email=administrador@gmail.com&password=1234567890&firstName=Julio&lastName=Bermudez&birthday=2018-07-26&role=1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"register"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "administrador@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "1234567890"
+								},
+								{
+									"key": "firstName",
+									"value": "Julio"
+								},
+								{
+									"key": "lastName",
+									"value": "Bermudez"
+								},
+								{
+									"key": "birthday",
+									"value": "2018-07-26"
+								},
+								{
+									"key": "role",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/user/login?email=abcdef@gmail.com&password=1234567890",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "abcdef@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "1234567890"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/user/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/user/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - Register Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/user/register/1?email=&password=&firstName&lastName&birthday",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"register",
+								"1"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": ""
+								},
+								{
+									"key": "password",
+									"value": ""
+								},
+								{
+									"key": "firstName",
+									"value": null
+								},
+								{
+									"key": "lastName",
+									"value": null
+								},
+								{
+									"key": "birthday",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Records- GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/user/records/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"records",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Role - Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/role/save?nombre=Analista&description=Rol de Analista",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"role",
+								"save"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Analista"
+								},
+								{
+									"key": "description",
+									"value": "Rol de Analista"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role - Save Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/role/save/1?nombre=Administrador&description=Rol de Gestion",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"role",
+								"save",
+								"1"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Administrador"
+								},
+								{
+									"key": "description",
+									"value": "Rol de Gestion"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role - GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/role/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"role",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role - DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/role/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"role",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Typesw",
+			"item": [
+				{
+					"name": "Typesw - Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/typesw/save?typew=Sitio Nuevo 3G",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"typesw",
+								"save"
+							],
+							"query": [
+								{
+									"key": "typew",
+									"value": "Sitio Nuevo 3G"
+								},
+								{
+									"key": "description",
+									"value": "Trabajo de Upgrade Modulos",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Typesw - Save Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/typesw/save/1?typew=Channel Element",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"typesw",
+								"save",
+								"1"
+							],
+							"query": [
+								{
+									"key": "typew",
+									"value": "Channel Element"
+								},
+								{
+									"key": "description",
+									"value": "Rol de Gestion",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Typesw - GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/typesw/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"typesw",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Typesw - DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/typesw/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"typesw",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Record",
+			"item": [
+				{
+					"name": "Record - Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/record/save?estacion=BOG.Calle 90-6&tecnologia=LTE&banda=1900MHz&tipot=1&estadoi=SEGUIMIENTO 36H&estadof=PRODUCCION&exitoso=1&standby=0&prorroga=0&user=2&typesw=2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"record",
+								"save"
+							],
+							"query": [
+								{
+									"key": "estacion",
+									"value": "BOG.Calle 90-6"
+								},
+								{
+									"key": "tecnologia",
+									"value": "LTE"
+								},
+								{
+									"key": "banda",
+									"value": "1900MHz"
+								},
+								{
+									"key": "tipot",
+									"value": "1"
+								},
+								{
+									"key": "estadoi",
+									"value": "SEGUIMIENTO 36H"
+								},
+								{
+									"key": "estadof",
+									"value": "PRODUCCION"
+								},
+								{
+									"key": "exitoso",
+									"value": "1"
+								},
+								{
+									"key": "standby",
+									"value": "0"
+								},
+								{
+									"key": "prorroga",
+									"value": "0"
+								},
+								{
+									"key": "user",
+									"value": "2"
+								},
+								{
+									"key": "typesw",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record - Save Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/record/save/2?estacion=BOG.Calle 90-2&tecnologia=3G&banda=1900MHz&tipot=1&estadoi=SEGUIMIENTO 36H&estadof=PRODUCCION&exitoso=1&standby=0&prorroga=0&user=1&typesw=1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"record",
+								"save",
+								"2"
+							],
+							"query": [
+								{
+									"key": "estacion",
+									"value": "BOG.Calle 90-2"
+								},
+								{
+									"key": "tecnologia",
+									"value": "3G"
+								},
+								{
+									"key": "banda",
+									"value": "1900MHz"
+								},
+								{
+									"key": "tipot",
+									"value": "1"
+								},
+								{
+									"key": "estadoi",
+									"value": "SEGUIMIENTO 36H"
+								},
+								{
+									"key": "estadof",
+									"value": "PRODUCCION"
+								},
+								{
+									"key": "exitoso",
+									"value": "1"
+								},
+								{
+									"key": "standby",
+									"value": "0"
+								},
+								{
+									"key": "prorroga",
+									"value": "0"
+								},
+								{
+									"key": "user",
+									"value": "1"
+								},
+								{
+									"key": "typesw",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record - GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/record/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"record",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record - DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/record/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"record",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-// var object = require('../modules/objectsAndTypes');
+var object = require('../modules/objectsAndTypes');
 var crypto = require('crypto');
 
 router.get('/:id', (req, res, next) => {
@@ -13,9 +13,9 @@ router.get('/:id', (req, res, next) => {
     });
 });
 
-router.post('/save', (req, res, next) => {
+router.post('/register', (req, res, next) => {
   object.save([
-    'email', 'password', 'firstName', 'lastName', 'birthday'
+    'email', 'password', 'firstName', 'lastName', 'birthday','role'
   ], req.query, 'User')
     .then(response => {
       res.json({ status: true, content: response });
@@ -25,12 +25,12 @@ router.post('/save', (req, res, next) => {
     });
 });
 
-router.put('/save/:id', passport.authenticate('bearer', { session: false }), (req, res, next) => {
+router.put('/register/:id', passport.authenticate('bearer', { session: false }), (req, res, next) => {
   let values = req.query;
   values.id = req.params.id;
 
   object.update([
-    'email', 'password', 'firstName', 'lastName', 'birthday'
+    'email', 'password', 'firstName', 'lastName', 'birthday','role'
   ], values, 'User')
     .then(response => {
       res.json({ status: true, content: response });
@@ -70,7 +70,7 @@ router.post('/login', (req, res, next) => {
       user.save();
       res.json({ status: true, content: user });
     } else {
-      res.json({ status: false, content: 'usuario no esta' });
+      res.json({ status: false, content: 'Usuario no se Encuentra Creado' });
     }
   }).catch(message => {
     res.json({ status: false, content: 'error' });
@@ -80,7 +80,26 @@ router.post('/login', (req, res, next) => {
 router.post('/logout', passport.authenticate('bearer', { session: false }), (req, res, next) => {
   req.session.user.token = null;
   req.session.user.save();
-  res.json({ status: true, content: 'adios' });
+  res.json({ status: true, content: 'Sesion Finalizada......' });
+});
+
+router.get('/records/:id', (req, res, next) => {
+  const includes = {
+    id: [
+      { model: models.Record, as: 'Records' }
+    ],
+    all: [
+      { model: models.Record, as: 'Records' }
+    ]
+  };
+
+  object.get('User', req.params.id, 1, includes)
+    .then(response => {
+      res.json({ status: true, content: response });
+    })
+    .catch(response => {
+      res.json({ status: false, content: response });
+    });
 });
 
 module.exports = router;
