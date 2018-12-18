@@ -18,7 +18,7 @@ passportAdmin.use(new Strategy((token, done) => {
     models.User
         .findOne({ where: { token } })
         .then(user => {
-            done(null, user && user.Role && user.Role.nombre == 'administrador');
+            done(null, user && user.Role && user.Role.nombre === 'administrador');
         });
 }
 ));
