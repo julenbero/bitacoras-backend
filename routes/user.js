@@ -13,9 +13,9 @@ router.get('/:id', (req, res, next) => {
     });
 });
 
-router.post('/register', (req, res, next) => {
+router.post('/register', passport.authenticate('admin', { session: false }), (req, res, next) => {
   object.save([
-    'email', 'password', 'firstName', 'lastName', 'birthday','role'
+    'email', 'password', 'firstName', 'lastName', 'birthday', 'role'
   ], req.query, 'User')
     .then(response => {
       res.json({ status: true, content: response });
@@ -25,12 +25,12 @@ router.post('/register', (req, res, next) => {
     });
 });
 
-router.put('/register/:id', passport.authenticate('bearer', { session: false }), (req, res, next) => {
+router.put('/register/:id', passport.authenticate('admin', { session: false }), (req, res, next) => {
   let values = req.query;
   values.id = req.params.id;
 
   object.update([
-    'email', 'password', 'firstName', 'lastName', 'birthday','role'
+    'email', 'password', 'firstName', 'lastName', 'birthday', 'role'
   ], values, 'User')
     .then(response => {
       res.json({ status: true, content: response });
@@ -40,7 +40,7 @@ router.put('/register/:id', passport.authenticate('bearer', { session: false }),
     });
 });
 
-router.delete('/delete/:id', (req, res, next) => {
+router.delete('/delete/:id', passport.authenticate('admin', { session: false }), (req, res, next) => {
   object.delete('User', req.params.id)
     .then(response => {
       res.json({ status: true, content: response });
@@ -77,7 +77,7 @@ router.post('/login', (req, res, next) => {
   });
 });
 
-router.post('/logout', passport.authenticate('bearer', { session: false }), (req, res, next) => {
+router.post('/logout', passport.authenticate('normal', { session: false }), (req, res, next) => {
   req.session.user.token = null;
   req.session.user.save();
   res.json({ status: true, content: 'Sesion Finalizada......' });
