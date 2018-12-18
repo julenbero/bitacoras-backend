@@ -72,10 +72,12 @@ module.exports = (sequelize, DataTypes) => {
         //asociar los roles
 
         Record.belongsTo(models.User, {
+            as: 'User',
             foreignKey: 'user'
         });
 
         Record.belongsTo(models.Typesw, {
+            as: 'Typew',
             foreignKey: 'typesw'
         });
     };
